@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ApiAmo</title>
+<style>
+:root { --giallo:#fee402; --marrone:#3d1f05; --testo:#1c1a17; --sfondo:#fffdf2; --riga:#e7dfb8; }
+@media (prefers-color-scheme: dark) { :root { --testo:#f2efe4; --sfondo:#1b1a14; --riga:#3a3720; --marrone:#fee402; } }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--testo); background:var(--sfondo); }
+header { background:var(--giallo); color:#3d1f05; padding:22px 18px; text-align:center; }
+header a { color:#3d1f05; text-decoration:none; font-weight:800; font-size:28px; letter-spacing:.3px; }
+main { max-width:760px; margin:0 auto; padding:22px 18px 60px; }
+h1 { font-size:27px; line-height:1.25; margin:.4em 0 .2em; }
+h2 { font-size:20px; margin:1.6em 0 .4em; }
+p, li { margin:.5em 0; }
+ul { padding-left:1.2em; }
+a { color:#a35a00; }
+@media (prefers-color-scheme: dark) { a { color:#ffd24d; } }
+.lingue { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 18px; padding:0; list-style:none; }
+.lingue button { font:inherit; font-size:15px; padding:6px 14px; border-radius:999px; border:1px solid var(--riga); background:transparent; color:var(--testo); cursor:pointer; }
+.lingue button.attiva { background:var(--giallo); color:#3d1f05; border-color:var(--giallo); font-weight:700; }
+.js .lingue { display:flex; }
+.lingue { display:none; }
+.js .sezione-lingua { display:none; }
+.js .sezione-lingua.attiva { display:block; }
+.sezione-lingua { border-top:1px solid var(--riga); padding-top:8px; margin-top:18px; }
+.js .sezione-lingua { border-top:0; margin-top:0; padding-top:0; }
+.aggiornato { color:#7a7358; font-size:15px; }
+.fai { display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 0; }
+.fai a { display:inline-block; background:var(--giallo); color:#3d1f05; font-weight:700; text-decoration:none; padding:12px 20px; border-radius:12px; }
+details { border:1px solid var(--riga); border-radius:12px; padding:10px 14px; margin:10px 0; }
+summary { font-weight:700; cursor:pointer; }
+footer { text-align:center; color:#7a7358; font-size:14px; padding:24px 18px 40px; }
+</style>
+</head>
+<body>
+<header><a href="index.html">ApiAmo</a></header>
+<main>
+<ul class="lingue"><li><button type="button" data-lingua="it">Italiano</button></li><li><button type="button" data-lingua="en">English</button></li><li><button type="button" data-lingua="fr">Français</button></li><li><button type="button" data-lingua="es">Español</button></li><li><button type="button" data-lingua="de">Deutsch</button></li><li><button type="button" data-lingua="ro">Română</button></li><li><button type="button" data-lingua="el">Ελληνικά</button></li></ul>
+<section class="sezione-lingua" data-lingua="it" lang="it">
+<h1>ApiAmo — Dall&#x27;arnia al barattolo</h1>
+<p>Il quaderno digitale dell&#x27;apicoltore: apiari, arnie, visite, varroa, miele, conti, magazzino ed etichette con QR. I tuoi dati restano sul tuo dispositivo.</p>
+<div class="fai"><a href="privacy.html?lang=it">Informativa sulla privacy</a><a href="assistenza.html?lang=it">Assistenza</a></div>
+</section>
+<section class="sezione-lingua" data-lingua="en" lang="en">
+<h1>ApiAmo — From hive to jar</h1>
+<p>The beekeeper&#x27;s digital notebook: apiaries, hives, visits, varroa, honey, accounts, inventory and QR labels. Your data stays on your device.</p>
+<div class="fai"><a href="privacy.html?lang=en">Privacy policy</a><a href="assistenza.html?lang=en">Support</a></div>
+</section>
+<section class="sezione-lingua" data-lingua="fr" lang="fr">
+<h1>ApiAmo — De la ruche au pot</h1>
+<p>Le carnet numérique de l&#x27;apiculteur : ruchers, ruches, visites, varroa, miel, comptes, stock et étiquettes QR. Vos données restent sur votre appareil.</p>
+<div class="fai"><a href="privacy.html?lang=fr">Politique de confidentialité</a><a href="assistenza.html?lang=fr">Assistance</a></div>
+</section>
+<section class="sezione-lingua" data-lingua="es" lang="es">
+<h1>ApiAmo — De la colmena al tarro</h1>
+<p>El cuaderno digital del apicultor: apiarios, colmenas, visitas, varroa, miel, cuentas, almacén y etiquetas QR. Tus datos permanecen en tu dispositivo.</p>
+<div class="fai"><a href="privacy.html?lang=es">Política de privacidad</a><a href="assistenza.html?lang=es">Asistencia</a></div>
+</section>
+<section class="sezione-lingua" data-lingua="de" lang="de">
+<h1>ApiAmo — Von der Beute ins Glas</h1>
+<p>Das digitale Notizbuch des Imkers: Bienenstände, Beuten, Besuche, Varroa, Honig, Finanzen, Lager und QR-Etiketten. Deine Daten bleiben auf deinem Gerät.</p>
+<div class="fai"><a href="privacy.html?lang=de">Datenschutzerklärung</a><a href="assistenza.html?lang=de">Support</a></div>
+</section>
+<section class="sezione-lingua" data-lingua="ro" lang="ro">
+<h1>ApiAmo — De la stup la borcan</h1>
+<p>Caietul digital al apicultorului: stupine, stupi, vizite, varroa, miere, conturi, depozit și etichete QR. Datele tale rămân pe dispozitivul tău.</p>
+<div class="fai"><a href="privacy.html?lang=ro">Politica de confidențialitate</a><a href="assistenza.html?lang=ro">Asistență</a></div>
+</section>
+<section class="sezione-lingua" data-lingua="el" lang="el">
+<h1>ApiAmo — Από την κυψέλη στο βάζο</h1>
+<p>Το ψηφιακό τετράδιο του μελισσοκόμου: μελισσοκομεία, κυψέλες, επισκέψεις, βαρρόα, μέλι, λογαριασμοί, αποθήκη και ετικέτες QR. Τα δεδομένα σας μένουν στη συσκευή σας.</p>
+<div class="fai"><a href="privacy.html?lang=el">Πολιτική απορρήτου</a><a href="assistenza.html?lang=el">Υποστήριξη</a></div>
+</section>
+</main>
+<footer>© <span class="d-anno"></span> <span class="d-nome">[NOME E COGNOME]</span></footer>
+<script>
+window.DATI = {
+  nome:  "Maurizio Covarelli",
+  email: "maurizio.covarelli@icloud.com",
+  data:  "2026-10-01"
+};
+</script>
+<script>
+(function () {
+  document.documentElement.classList.add("js");
+  var D = window.DATI || {};
+  var anno = String(new Date().getFullYear());
+  function riempi(sel, valore, mail) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (!valore) return;
+      el.textContent = valore;
+      if (mail) { el.setAttribute("href", "mailto:" + valore); }
+    });
+  }
+  riempi(".d-nome", D.nome); riempi(".d-data", D.data); riempi(".d-email", D.email, true);
+  document.querySelectorAll(".d-anno").forEach(function (el) { el.textContent = anno; });
+
+  var sezioni = Array.prototype.slice.call(document.querySelectorAll(".sezione-lingua"));
+  var bottoni = Array.prototype.slice.call(document.querySelectorAll(".lingue button"));
+  var disponibili = sezioni.map(function (s) { return s.getAttribute("data-lingua"); });
+  function scegli(lg) {
+    sezioni.forEach(function (s) { s.classList.toggle("attiva", s.getAttribute("data-lingua") === lg); });
+    bottoni.forEach(function (b) { b.classList.toggle("attiva", b.getAttribute("data-lingua") === lg); });
+    document.documentElement.setAttribute("lang", lg);
+    try { localStorage.setItem("apiamo_lingua", lg); } catch (e) {}
+  }
+  bottoni.forEach(function (b) { b.addEventListener("click", function () { scegli(b.getAttribute("data-lingua")); }); });
+  var richiesta = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
+  var salvata = ""; try { salvata = localStorage.getItem("apiamo_lingua") || ""; } catch (e) {}
+  var browser = (navigator.language || "en").slice(0, 2).toLowerCase();
+  var scelta = [richiesta, salvata, browser].filter(function (x) { return disponibili.indexOf(x) >= 0; })[0] || "en";
+  scegli(scelta);
+})();
+</script>
+</body>
+</html>

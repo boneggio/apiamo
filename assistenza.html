@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ApiAmo — Support</title>
+<style>
+:root { --giallo:#fee402; --marrone:#3d1f05; --testo:#1c1a17; --sfondo:#fffdf2; --riga:#e7dfb8; }
+@media (prefers-color-scheme: dark) { :root { --testo:#f2efe4; --sfondo:#1b1a14; --riga:#3a3720; --marrone:#fee402; } }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--testo); background:var(--sfondo); }
+header { background:var(--giallo); color:#3d1f05; padding:22px 18px; text-align:center; }
+header a { color:#3d1f05; text-decoration:none; font-weight:800; font-size:28px; letter-spacing:.3px; }
+main { max-width:760px; margin:0 auto; padding:22px 18px 60px; }
+h1 { font-size:27px; line-height:1.25; margin:.4em 0 .2em; }
+h2 { font-size:20px; margin:1.6em 0 .4em; }
+p, li { margin:.5em 0; }
+ul { padding-left:1.2em; }
+a { color:#a35a00; }
+@media (prefers-color-scheme: dark) { a { color:#ffd24d; } }
+.lingue { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 18px; padding:0; list-style:none; }
+.lingue button { font:inherit; font-size:15px; padding:6px 14px; border-radius:999px; border:1px solid var(--riga); background:transparent; color:var(--testo); cursor:pointer; }
+.lingue button.attiva { background:var(--giallo); color:#3d1f05; border-color:var(--giallo); font-weight:700; }
+.js .lingue { display:flex; }
+.lingue { display:none; }
+.js .sezione-lingua { display:none; }
+.js .sezione-lingua.attiva { display:block; }
+.sezione-lingua { border-top:1px solid var(--riga); padding-top:8px; margin-top:18px; }
+.js .sezione-lingua { border-top:0; margin-top:0; padding-top:0; }
+.aggiornato { color:#7a7358; font-size:15px; }
+.fai { display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 0; }
+.fai a { display:inline-block; background:var(--giallo); color:#3d1f05; font-weight:700; text-decoration:none; padding:12px 20px; border-radius:12px; }
+details { border:1px solid var(--riga); border-radius:12px; padding:10px 14px; margin:10px 0; }
+summary { font-weight:700; cursor:pointer; }
+footer { text-align:center; color:#7a7358; font-size:14px; padding:24px 18px 40px; }
+</style>
+</head>
+<body>
+<header><a href="index.html">ApiAmo</a></header>
+<main>
+<ul class="lingue"><li><button type="button" data-lingua="it">Italiano</button></li><li><button type="button" data-lingua="en">English</button></li><li><button type="button" data-lingua="fr">Français</button></li><li><button type="button" data-lingua="es">Español</button></li><li><button type="button" data-lingua="de">Deutsch</button></li><li><button type="button" data-lingua="ro">Română</button></li><li><button type="button" data-lingua="el">Ελληνικά</button></li></ul>
+<section class="sezione-lingua" data-lingua="it" lang="it">
+<h1>ApiAmo — Assistenza</h1>
+<p>Hai bisogno di aiuto o vuoi segnalare un problema? Scrivi a <a class="d-email" href="mailto:">[EMAIL]</a>: rispondo il prima possibile.</p>
+<h2>Domande frequenti</h2>
+<details><summary>Come faccio il backup dei miei dati?</summary><p>Dal menu con i tre puntini scegli Backup completo e salva la cartella in iCloud Drive o nei File. L&#x27;app te lo ricorda da sola se passa troppo tempo.</p></details>
+<details><summary>Ho cambiato telefono: come ritrovo l&#x27;acquisto?</summary><p>Apri la schermata Sblocca ApiAmo e tocca Ripristina l&#x27;acquisto, con lo stesso account Apple.</p></details>
+<details><summary>Come ritrovo i miei dati su un nuovo telefono?</summary><p>Fai il backup completo sul vecchio telefono, salvalo in iCloud Drive, poi sul nuovo scegli Ripristina da una cartella di backup.</p></details>
+<details><summary>Come cancello i miei dati?</summary><p>Disinstalla l&#x27;app: i dati restano soltanto sul tuo dispositivo e vengono eliminati con lei.</p></details>
+</section>
+<section class="sezione-lingua" data-lingua="en" lang="en">
+<h1>ApiAmo — Support</h1>
+<p>Need help or want to report a problem? Write to <a class="d-email" href="mailto:">[EMAIL]</a>: I reply as soon as possible.</p>
+<h2>Frequently asked questions</h2>
+<details><summary>How do I back up my data?</summary><p>From the three-dot menu choose Full backup and save the folder in iCloud Drive or in Files. The app reminds you by itself if too much time passes.</p></details>
+<details><summary>I changed phone: how do I get my purchase back?</summary><p>Open the Unlock ApiAmo screen and tap Restore purchase, with the same Apple account.</p></details>
+<details><summary>How do I get my data on a new phone?</summary><p>Make a full backup on the old phone, save it in iCloud Drive, then on the new one choose Restore from a backup folder.</p></details>
+<details><summary>How do I delete my data?</summary><p>Uninstall the app: the data lives only on your device and is deleted with it.</p></details>
+</section>
+<section class="sezione-lingua" data-lingua="fr" lang="fr">
+<h1>ApiAmo — Assistance</h1>
+<p>Besoin d&#x27;aide ou envie de signaler un problème ? Écrivez à <a class="d-email" href="mailto:">[EMAIL]</a> : je réponds dès que possible.</p>
+<h2>Questions fréquentes</h2>
+<details><summary>Comment sauvegarder mes données ?</summary><p>Dans le menu à trois points, choisissez Sauvegarde complète et enregistrez le dossier dans iCloud Drive ou dans Fichiers. L&#x27;app vous le rappelle toute seule si trop de temps passe.</p></details>
+<details><summary>J&#x27;ai changé de téléphone : comment retrouver mon achat ?</summary><p>Ouvrez l&#x27;écran Débloquer ApiAmo et touchez Restaurer l&#x27;achat, avec le même compte Apple.</p></details>
+<details><summary>Comment retrouver mes données sur un nouveau téléphone ?</summary><p>Faites la sauvegarde complète sur l&#x27;ancien téléphone, enregistrez-la dans iCloud Drive, puis sur le nouveau choisissez Restaurer depuis un dossier de sauvegarde.</p></details>
+<details><summary>Comment supprimer mes données ?</summary><p>Désinstallez l&#x27;app : les données restent uniquement sur votre appareil et sont supprimées avec elle.</p></details>
+</section>
+<section class="sezione-lingua" data-lingua="es" lang="es">
+<h1>ApiAmo — Asistencia</h1>
+<p>¿Necesitas ayuda o quieres comunicar un problema? Escribe a <a class="d-email" href="mailto:">[EMAIL]</a>: respondo lo antes posible.</p>
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Cómo hago la copia de seguridad de mis datos?</summary><p>En el menú de tres puntos elige Copia de seguridad completa y guarda la carpeta en iCloud Drive o en Archivos. La app te lo recuerda sola si pasa demasiado tiempo.</p></details>
+<details><summary>He cambiado de teléfono: ¿cómo recupero la compra?</summary><p>Abre la pantalla Desbloquear ApiAmo y toca Restaurar la compra, con la misma cuenta de Apple.</p></details>
+<details><summary>¿Cómo recupero mis datos en un teléfono nuevo?</summary><p>Haz la copia completa en el teléfono viejo, guárdala en iCloud Drive y en el nuevo elige Restaurar desde una carpeta de copia.</p></details>
+<details><summary>¿Cómo borro mis datos?</summary><p>Desinstala la app: los datos permanecen solo en tu dispositivo y se eliminan con ella.</p></details>
+</section>
+<section class="sezione-lingua" data-lingua="de" lang="de">
+<h1>ApiAmo — Support</h1>
+<p>Brauchst du Hilfe oder möchtest du ein Problem melden? Schreibe an <a class="d-email" href="mailto:">[EMAIL]</a>: Ich antworte so schnell wie möglich.</p>
+<h2>Häufige Fragen</h2>
+<details><summary>Wie sichere ich meine Daten?</summary><p>Wähle im Menü mit den drei Punkten Vollständiges Backup und speichere den Ordner in iCloud Drive oder in Dateien. Die App erinnert dich von selbst, wenn zu viel Zeit vergeht.</p></details>
+<details><summary>Ich habe das Telefon gewechselt: Wie bekomme ich meinen Kauf zurück?</summary><p>Öffne den Bildschirm ApiAmo freischalten und tippe auf Kauf wiederherstellen, mit demselben Apple-Account.</p></details>
+<details><summary>Wie bekomme ich meine Daten auf ein neues Telefon?</summary><p>Erstelle auf dem alten Telefon ein vollständiges Backup, speichere es in iCloud Drive und wähle auf dem neuen Aus einem Backup-Ordner wiederherstellen.</p></details>
+<details><summary>Wie lösche ich meine Daten?</summary><p>Deinstalliere die App: Die Daten liegen nur auf deinem Gerät und werden mit ihr gelöscht.</p></details>
+</section>
+<section class="sezione-lingua" data-lingua="ro" lang="ro">
+<h1>ApiAmo — Asistență</h1>
+<p>Ai nevoie de ajutor sau vrei să raportezi o problemă? Scrie la <a class="d-email" href="mailto:">[EMAIL]</a>: răspund cât mai repede.</p>
+<h2>Întrebări frecvente</h2>
+<details><summary>Cum fac copia de rezervă a datelor?</summary><p>Din meniul cu trei puncte alege Copie de rezervă completă și salvează dosarul în iCloud Drive sau în Fișiere. Aplicația îți amintește singură dacă trece prea mult timp.</p></details>
+<details><summary>Mi-am schimbat telefonul: cum îmi recuperez achiziția?</summary><p>Deschide ecranul Deblochează ApiAmo și atinge Restaurează achiziția, cu același cont Apple.</p></details>
+<details><summary>Cum îmi regăsesc datele pe un telefon nou?</summary><p>Fă copia completă pe telefonul vechi, salveaz-o în iCloud Drive, apoi pe cel nou alege Restaurează dintr-un dosar de copie.</p></details>
+<details><summary>Cum îmi șterg datele?</summary><p>Dezinstalează aplicația: datele rămân doar pe dispozitivul tău și se șterg odată cu ea.</p></details>
+</section>
+<section class="sezione-lingua" data-lingua="el" lang="el">
+<h1>ApiAmo — Υποστήριξη</h1>
+<p>Χρειάζεστε βοήθεια ή θέλετε να αναφέρετε ένα πρόβλημα; Γράψτε στο <a class="d-email" href="mailto:">[EMAIL]</a>: απαντώ το συντομότερο.</p>
+<h2>Συχνές ερωτήσεις</h2>
+<details><summary>Πώς κάνω αντίγραφο ασφαλείας των δεδομένων μου;</summary><p>Από το μενού με τις τρεις τελείες επιλέξτε Πλήρες αντίγραφο ασφαλείας και αποθηκεύστε τον φάκελο στο iCloud Drive ή στα Αρχεία. Η εφαρμογή σας το θυμίζει μόνη της αν περάσει πολύς καιρός.</p></details>
+<details><summary>Άλλαξα τηλέφωνο: πώς ξαναβρίσκω την αγορά μου;</summary><p>Ανοίξτε την οθόνη Ξεκλείδωμα του ApiAmo και πατήστε Επαναφορά αγοράς, με τον ίδιο λογαριασμό Apple.</p></details>
+<details><summary>Πώς ξαναβρίσκω τα δεδομένα μου σε νέο τηλέφωνο;</summary><p>Κάντε το πλήρες αντίγραφο στο παλιό τηλέφωνο, αποθηκεύστε το στο iCloud Drive και στο νέο επιλέξτε Επαναφορά από φάκελο αντιγράφου.</p></details>
+<details><summary>Πώς διαγράφω τα δεδομένα μου;</summary><p>Απεγκαταστήστε την εφαρμογή: τα δεδομένα μένουν μόνο στη συσκευή σας και διαγράφονται μαζί της.</p></details>
+</section>
+</main>
+<footer>© <span class="d-anno"></span> <span class="d-nome">[NOME E COGNOME]</span></footer>
+<script>
+window.DATI = {
+  nome:  "Maurizio Covarelli",
+  email: "maurizio.covarelli@icloud.com",
+  data:  "2026-10-01"
+};
+</script>
+<script>
+(function () {
+  document.documentElement.classList.add("js");
+  var D = window.DATI || {};
+  var anno = String(new Date().getFullYear());
+  function riempi(sel, valore, mail) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (!valore) return;
+      el.textContent = valore;
+      if (mail) { el.setAttribute("href", "mailto:" + valore); }
+    });
+  }
+  riempi(".d-nome", D.nome); riempi(".d-data", D.data); riempi(".d-email", D.email, true);
+  document.querySelectorAll(".d-anno").forEach(function (el) { el.textContent = anno; });
+
+  var sezioni = Array.prototype.slice.call(document.querySelectorAll(".sezione-lingua"));
+  var bottoni = Array.prototype.slice.call(document.querySelectorAll(".lingue button"));
+  var disponibili = sezioni.map(function (s) { return s.getAttribute("data-lingua"); });
+  function scegli(lg) {
+    sezioni.forEach(function (s) { s.classList.toggle("attiva", s.getAttribute("data-lingua") === lg); });
+    bottoni.forEach(function (b) { b.classList.toggle("attiva", b.getAttribute("data-lingua") === lg); });
+    document.documentElement.setAttribute("lang", lg);
+    try { localStorage.setItem("apiamo_lingua", lg); } catch (e) {}
+  }
+  bottoni.forEach(function (b) { b.addEventListener("click", function () { scegli(b.getAttribute("data-lingua")); }); });
+  var richiesta = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
+  var salvata = ""; try { salvata = localStorage.getItem("apiamo_lingua") || ""; } catch (e) {}
+  var browser = (navigator.language || "en").slice(0, 2).toLowerCase();
+  var scelta = [richiesta, salvata, browser].filter(function (x) { return disponibili.indexOf(x) >= 0; })[0] || "en";
+  scegli(scelta);
+})();
+</script>
+</body>
+</html>
