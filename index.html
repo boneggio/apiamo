@@ -3,101 +3,294 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ApiAmo</title>
+<title>ApiAmo — il quaderno dell'apicoltore</title>
+<meta name="description" content="ApiAmo, il quaderno digitale dell&#x27;apicoltore per iPhone e iPad: arnie, visite, varroa, miele, lotti ed etichette.">
+<meta name="apple-itunes-app" content="app-id=6818210322">
+<meta property="og:title" content="ApiAmo">
+<meta property="og:description" content="ApiAmo, il quaderno digitale dell&#x27;apicoltore per iPhone e iPad: arnie, visite, varroa, miele, lotti ed etichette.">
+<meta property="og:image" content="https://apiamo.boneggio.it/img_icona.png">
+<meta property="og:url" content="https://apiamo.boneggio.it/">
+<link rel="icon" href="img_icona.png">
+<link rel="apple-touch-icon" href="img_icona.png">
 <style>
-:root { --giallo:#fee402; --marrone:#3d1f05; --testo:#1c1a17; --sfondo:#fffdf2; --riga:#e7dfb8; }
-@media (prefers-color-scheme: dark) { :root { --testo:#f2efe4; --sfondo:#1b1a14; --riga:#3a3720; --marrone:#fee402; } }
+:root { --giallo:#fee402; --ambra:#f2a61a; --marrone:#3d1f05; --testo:#1c1a17; --sfondo:#fffdf2; --carta:#ffffff; --riga:#e7dfb8; --tenue:#6e6750; }
+@media (prefers-color-scheme: dark) { :root { --testo:#f2efe4; --sfondo:#1b1a14; --carta:#25231b; --riga:#3a3720; --marrone:#fee402; --tenue:#b7b097; } }
 * { box-sizing:border-box; }
 html { -webkit-text-size-adjust:100%; }
 body { margin:0; font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--testo); background:var(--sfondo); }
-header { background:var(--giallo); color:#3d1f05; padding:22px 18px; text-align:center; }
-header a { color:#3d1f05; text-decoration:none; font-weight:800; font-size:28px; letter-spacing:.3px; }
-main { max-width:760px; margin:0 auto; padding:22px 18px 60px; }
-h1 { font-size:27px; line-height:1.25; margin:.4em 0 .2em; }
-h2 { font-size:20px; margin:1.6em 0 .4em; }
+header { background:var(--giallo); color:#3d1f05; padding:14px 16px; }
+header .barra { max-width:1040px; margin:0 auto; display:flex; align-items:center; gap:12px; }
+header img { width:40px; height:40px; border-radius:10px; }
+header a { color:#3d1f05; text-decoration:none; font-weight:800; font-size:24px; }
+main { max-width:1040px; margin:0 auto; padding:18px 16px 60px; }
+h1 { font-size:clamp(34px,6vw,52px); line-height:1.1; margin:.2em 0 .1em; color:var(--marrone); }
+h2 { font-size:26px; line-height:1.25; margin:2em 0 .6em; }
+h3 { font-size:18px; margin:0 0 .3em; }
 p, li { margin:.5em 0; }
-ul { padding-left:1.2em; }
 a { color:#a35a00; }
 @media (prefers-color-scheme: dark) { a { color:#ffd24d; } }
-.lingue { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 18px; padding:0; list-style:none; }
+.lingue { display:none; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 10px; padding:0; list-style:none; }
+.js .lingue { display:flex; }
 .lingue button { font:inherit; font-size:15px; padding:6px 14px; border-radius:999px; border:1px solid var(--riga); background:transparent; color:var(--testo); cursor:pointer; }
 .lingue button.attiva { background:var(--giallo); color:#3d1f05; border-color:var(--giallo); font-weight:700; }
-.js .lingue { display:flex; }
-.lingue { display:none; }
-.js .sezione-lingua { display:none; }
+.sezione-lingua { border-top:1px solid var(--riga); margin-top:24px; padding-top:8px; }
+.js .sezione-lingua { display:none; border-top:0; margin-top:0; padding-top:0; }
 .js .sezione-lingua.attiva { display:block; }
-.sezione-lingua { border-top:1px solid var(--riga); padding-top:8px; margin-top:18px; }
-.js .sezione-lingua { border-top:0; margin-top:0; padding-top:0; }
-.aggiornato { color:#7a7358; font-size:15px; }
-.fai { display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 0; }
+.eroe { display:grid; grid-template-columns:1fr; gap:24px; align-items:center; padding:12px 0 8px; }
+@media (min-width:820px) { .eroe { grid-template-columns:1.25fr 1fr; } }
+.slogan { font-size:22px; font-weight:700; margin:0 0 .4em; }
+.intro { font-size:18px; }
+.scarica { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:20px 0 8px; }
+.scarica .badge img { height:56px; width:auto; display:block; }
+.etichetta { display:inline-block; padding:10px 16px; border-radius:12px; font-weight:700; font-size:15px; }
+.presto { background:var(--giallo); color:#3d1f05; }
+.android { border:1px dashed var(--riga); color:var(--tenue); }
+.pronto { display:none; } .pubblicata .pronto { display:inline-block; } .pubblicata .presto { display:none; }
+.prezzo-breve { color:var(--tenue); font-size:15px; }
+.qr { display:none; text-align:center; background:var(--carta); border:1px solid var(--riga); border-radius:20px; padding:18px; }
+.qr img { width:180px; height:180px; }
+.qr p { font-size:14px; color:var(--tenue); margin:.4em 0 0; }
+@media (min-width:820px) { .pubblicata .qr { display:block; } }
+.vetrina-eroe { text-align:center; }
+.vetrina-eroe img { width:min(300px,70%); height:auto; border-radius:28px; box-shadow:0 12px 36px rgba(61,31,5,.18); }
+.galleria { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 2px 14px; -webkit-overflow-scrolling:touch; }
+.galleria img { flex:0 0 auto; width:200px; height:auto; border-radius:18px; scroll-snap-align:start; box-shadow:0 6px 18px rgba(61,31,5,.14); }
+.funzioni { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+.carta { background:var(--carta); border:1px solid var(--riga); border-radius:18px; padding:18px; }
+.carta h3::before { content:""; display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--ambra); margin-right:8px; vertical-align:middle; }
+.carta p { margin:0; color:var(--tenue); font-size:16px; }
+ol.passi { counter-reset:passo; list-style:none; padding:0; display:grid; gap:10px; }
+ol.passi li { counter-increment:passo; position:relative; padding:12px 14px 12px 56px; background:var(--carta); border:1px solid var(--riga); border-radius:14px; margin:0; }
+ol.passi li::before { content:counter(passo); position:absolute; left:14px; top:12px; width:30px; height:30px; border-radius:50%; background:var(--giallo); color:#3d1f05; font-weight:800; text-align:center; line-height:30px; }
+.due { display:grid; grid-template-columns:1fr; gap:14px; }
+@media (min-width:820px) { .due { grid-template-columns:1fr 1fr; } }
+.ipad { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
+.ipad img { width:min(320px,46%); height:auto; border-radius:16px; box-shadow:0 6px 18px rgba(61,31,5,.14); }
+.fai { display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 0; }
 .fai a { display:inline-block; background:var(--giallo); color:#3d1f05; font-weight:700; text-decoration:none; padding:12px 20px; border-radius:12px; }
-details { border:1px solid var(--riga); border-radius:12px; padding:10px 14px; margin:10px 0; }
-summary { font-weight:700; cursor:pointer; }
-footer { text-align:center; color:#7a7358; font-size:14px; padding:24px 18px 40px; }
+footer { text-align:center; color:var(--tenue); font-size:14px; padding:24px 16px 40px; }
 </style>
 </head>
 <body>
-<header><a href="index.html">ApiAmo</a></header>
+<header><div class="barra"><img src="img_icona.png" alt="" width="40" height="40"><a href="index.html">ApiAmo</a></div></header>
 <main>
 <ul class="lingue"><li><button type="button" data-lingua="it">Italiano</button></li><li><button type="button" data-lingua="en">English</button></li><li><button type="button" data-lingua="fr">Français</button></li><li><button type="button" data-lingua="es">Español</button></li><li><button type="button" data-lingua="de">Deutsch</button></li><li><button type="button" data-lingua="ro">Română</button></li><li><button type="button" data-lingua="el">Ελληνικά</button></li></ul>
 <section class="sezione-lingua" data-lingua="it" lang="it">
-<h1>ApiAmo — Dall&#x27;arnia al barattolo</h1>
-<p>Il quaderno digitale dell&#x27;apicoltore: apiari, arnie, visite, varroa, miele, conti, magazzino ed etichette con QR. I tuoi dati restano sul tuo dispositivo.</p>
+<div class="eroe">
+<div>
+<h1>ApiAmo</h1>
+<p class="slogan">Dall&#x27;arnia al barattolo</p>
+<p class="intro">Il quaderno digitale dell&#x27;apicoltore. Segui ogni arnia, registra le visite in pochi secondi anche con i guanti, tieni d&#x27;occhio varroa e trattamenti, e porta il tuo miele fino all&#x27;etichetta. Tutto sul tuo iPhone e iPad, senza account e senza abbonamenti.</p>
+<div class="scarica">
+<a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/it-it?size=250x83" alt="Scarica su App Store" width="168" height="56"></a>
+<span class="etichetta presto">Presto su App Store</span>
+<span class="etichetta android">Versione Android in arrivo</span>
+</div>
+<p class="prezzo-breve">Gratis da scaricare · prova con 1 apiario e 3 arnie · sblocco completo con un unico acquisto</p>
+</div>
+<div class="vetrina-eroe"><img src="img_arnia.jpg" alt="ApiAmo" width="300" height="650"><div class="qr"><img src="img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Inquadra con il telefono per scaricare</p></div></div>
+</div>
+<h2>Com&#x27;è fatta</h2>
+<div class="galleria"><img src="img_copertina.jpg" alt="ApiAmo 1" loading="lazy" width="200" height="433"><img src="img_arnia.jpg" alt="ApiAmo 2" loading="lazy" width="200" height="433"><img src="img_visita.jpg" alt="ApiAmo 3" loading="lazy" width="200" height="433"><img src="img_varroa.jpg" alt="ApiAmo 4" loading="lazy" width="200" height="433"><img src="img_miele.jpg" alt="ApiAmo 5" loading="lazy" width="200" height="433"><img src="img_etichette.jpg" alt="ApiAmo 6" loading="lazy" width="200" height="433"><img src="img_mappa.jpg" alt="ApiAmo 7" loading="lazy" width="200" height="433"><img src="img_magazzino.jpg" alt="ApiAmo 8" loading="lazy" width="200" height="433"></div>
+<h2>Cosa puoi fare con ApiAmo</h2>
+<div class="funzioni"><div class="carta"><h3>Apiari e mappa</h3><p>Tutti i tuoi apiari su una mappa, ognuno con la faccina che ne riassume la salute, la scheda con i codici e i documenti.</p></div><div class="carta"><h3>Arnie, telaini e melari</h3><p>Il nido con i suoi telaini (covata, miele, polline…) e i melari con la pesatura: vedi l&#x27;arnia come è davvero.</p></div><div class="carta"><h3>Visite in pochi secondi</h3><p>Stato con una faccina, regina, celle reali, scorte e carattere della famiglia. Foto, note scritte o dettate e note vocali.</p></div><div class="carta"><h3>Varroa e trattamenti</h3><p>Conte della varroa con grafico e avviso, trattamenti con lotto, scadenza e documenti del medicinale.</p></div><div class="carta"><h3>Regine, nutrizione, sciamature</h3><p>Età e colore di marcatura della regina, razza e allevatore, nutrizione con le quantità, sciami che diventano nuove arnie.</p></div><div class="carta"><h3>Promemoria e meteo</h3><p>Agenda con notifiche e avvisi automatici; previsioni di ogni apiario con i giorni adatti alla visita.</p></div><div class="carta"><h3>Miele, lotti ed etichette</h3><p>Smielature, lotti, vendite in vasetti e clienti. Etichette con QR code pronte da stampare.</p></div><div class="carta"><h3>Conti e magazzino</h3><p>Spese, contributi e ricavi con il riepilogo; scorte minime e scadenze di medicinali, candito e vasetti.</p></div><div class="carta"><h3>I tuoi dati restano tuoi</h3><p>Niente account e niente pubblicità: i dati stanno sul tuo dispositivo, con backup completo e blocco con Face ID.</p></div></div>
+<h2>Come si usa</h2>
+<ol class="passi"><li>Scarica ApiAmo e tocca «Entra».</li><li>Tocca «Aggiungi apiario», poi apri l&#x27;apiario e tocca «Aggiungi arnia».</li><li>Apri l&#x27;arnia e tocca il nido: trovi stato, telaini, visite, varroa, trattamenti, regina e promemoria.</li><li>Dal menu ⋯ in alto a destra trovi mappa, miele e lotti, spese e ricavi, grafici, magazzino e backup.</li><li>Vuoi solo dare un&#x27;occhiata? Apri la «Demo guidata» dal menu ⋯: ti mostra tutto con dati di esempio.</li></ol>
+<div class="due">
+<div><h2>Prezzo</h2><p>ApiAmo si scarica gratis e si può provare con 1 apiario e 3 arnie, con tutte le funzioni. Con un unico acquisto, senza abbonamento, togli ogni limite per sempre.</p></div>
+<div><h2>Per iPhone e iPad</h2><p>Funziona da iOS 17, su iPhone e iPad (su iPad testi e tasti sono più grandi, comodi anche con i guanti). Disponibile in italiano, inglese, francese, spagnolo, tedesco, rumeno e greco.</p></div>
+</div>
+<div class="ipad"><img src="img_ipad-arnia.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"><img src="img_ipad-mappa.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"></div>
 <div class="fai"><a href="privacy.html?lang=it">Informativa sulla privacy</a><a href="assistenza.html?lang=it">Assistenza</a></div>
 </section>
 <section class="sezione-lingua" data-lingua="en" lang="en">
-<h1>ApiAmo — From hive to jar</h1>
-<p>The beekeeper&#x27;s digital notebook: apiaries, hives, visits, varroa, honey, accounts, inventory and QR labels. Your data stays on your device.</p>
+<div class="eroe">
+<div>
+<h1>ApiAmo</h1>
+<p class="slogan">From hive to jar</p>
+<p class="intro">The beekeeper&#x27;s digital notebook. Follow every hive, record visits in seconds even with gloves on, keep an eye on varroa and treatments, and take your honey all the way to the label. All on your iPhone and iPad, with no account and no subscription.</p>
+<div class="scarica">
+<a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="168" height="56"></a>
+<span class="etichetta presto">Coming soon to the App Store</span>
+<span class="etichetta android">Android version coming soon</span>
+</div>
+<p class="prezzo-breve">Free to download · try it with 1 apiary and 3 hives · full unlock with a one-time purchase</p>
+</div>
+<div class="vetrina-eroe"><img src="img_arnia.jpg" alt="ApiAmo" width="300" height="650"><div class="qr"><img src="img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Scan with your phone to download</p></div></div>
+</div>
+<h2>Take a look</h2>
+<div class="galleria"><img src="img_copertina.jpg" alt="ApiAmo 1" loading="lazy" width="200" height="433"><img src="img_arnia.jpg" alt="ApiAmo 2" loading="lazy" width="200" height="433"><img src="img_visita.jpg" alt="ApiAmo 3" loading="lazy" width="200" height="433"><img src="img_varroa.jpg" alt="ApiAmo 4" loading="lazy" width="200" height="433"><img src="img_miele.jpg" alt="ApiAmo 5" loading="lazy" width="200" height="433"><img src="img_etichette.jpg" alt="ApiAmo 6" loading="lazy" width="200" height="433"><img src="img_mappa.jpg" alt="ApiAmo 7" loading="lazy" width="200" height="433"><img src="img_magazzino.jpg" alt="ApiAmo 8" loading="lazy" width="200" height="433"></div>
+<h2>What you can do with ApiAmo</h2>
+<div class="funzioni"><div class="carta"><h3>Apiaries and map</h3><p>All your apiaries on a map, each with a face summarising its health, plus a record card with codes and documents.</p></div><div class="carta"><h3>Hives, frames and supers</h3><p>The brood box with its frames (brood, honey, pollen…) and the honey supers with their weights: see each hive as it really is.</p></div><div class="carta"><h3>Visits in seconds</h3><p>Status with a face, queen, queen cells, stores and temperament. Photos, typed or dictated notes and voice notes.</p></div><div class="carta"><h3>Varroa and treatments</h3><p>Varroa counts with a chart and alerts; treatments with batch, expiry date and medicine documents.</p></div><div class="carta"><h3>Queens, feeding, swarms</h3><p>Queen age and marking colour, breed and breeder, feeding with quantities, swarms that become new hives.</p></div><div class="carta"><h3>Reminders and weather</h3><p>Agenda with notifications and automatic alerts; forecasts for each apiary with the best days for a visit.</p></div><div class="carta"><h3>Honey, lots and labels</h3><p>Harvests, lots, sales by jar and customers. Labels with QR codes, ready to print.</p></div><div class="carta"><h3>Accounts and inventory</h3><p>Expenses, grants and income with a summary; minimum stock and expiry dates for medicines, fondant and jars.</p></div><div class="carta"><h3>Your data stays yours</h3><p>No account and no ads: data stays on your device, with full backups and an optional Face ID lock.</p></div></div>
+<h2>How it works</h2>
+<ol class="passi"><li>Download ApiAmo and tap “Enter”.</li><li>Tap “Add apiary”, then open the apiary and tap “Add hive”.</li><li>Open the hive and tap the brood box: you&#x27;ll find status, frames, visits, varroa, treatments, queen and reminders.</li><li>The ⋯ menu at the top right contains the map, honey and lots, expenses and revenue, charts, inventory and backup.</li><li>Just want a look? Open the “Guided demo” from the ⋯ menu: it shows everything with sample data.</li></ol>
+<div class="due">
+<div><h2>Price</h2><p>ApiAmo is free to download and you can try it with 1 apiary and 3 hives, with every feature. A single purchase, with no subscription, removes all limits forever.</p></div>
+<div><h2>For iPhone and iPad</h2><p>Works from iOS 17 on iPhone and iPad (on iPad, text and buttons are bigger, easy to use even with gloves). Available in Italian, English, French, Spanish, German, Romanian and Greek.</p></div>
+</div>
+<div class="ipad"><img src="img_ipad-arnia.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"><img src="img_ipad-mappa.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"></div>
 <div class="fai"><a href="privacy.html?lang=en">Privacy policy</a><a href="assistenza.html?lang=en">Support</a></div>
 </section>
 <section class="sezione-lingua" data-lingua="fr" lang="fr">
-<h1>ApiAmo — De la ruche au pot</h1>
-<p>Le carnet numérique de l&#x27;apiculteur : ruchers, ruches, visites, varroa, miel, comptes, stock et étiquettes QR. Vos données restent sur votre appareil.</p>
+<div class="eroe">
+<div>
+<h1>ApiAmo</h1>
+<p class="slogan">De la ruche au pot</p>
+<p class="intro">Le carnet numérique de l&#x27;apiculteur. Suivez chaque ruche, enregistrez vos visites en quelques secondes même avec des gants, surveillez varroa et traitements, et menez votre miel jusqu&#x27;à l&#x27;étiquette. Tout sur votre iPhone et iPad, sans compte et sans abonnement.</p>
+<div class="scarica">
+<a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83" alt="Télécharger dans l&#x27;App Store" width="168" height="56"></a>
+<span class="etichetta presto">Bientôt sur l&#x27;App Store</span>
+<span class="etichetta android">Version Android bientôt disponible</span>
+</div>
+<p class="prezzo-breve">Téléchargement gratuit · essai avec 1 rucher et 3 ruches · déblocage complet par un achat unique</p>
+</div>
+<div class="vetrina-eroe"><img src="img_arnia.jpg" alt="ApiAmo" width="300" height="650"><div class="qr"><img src="img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Scannez avec votre téléphone pour télécharger</p></div></div>
+</div>
+<h2>Aperçu</h2>
+<div class="galleria"><img src="img_copertina.jpg" alt="ApiAmo 1" loading="lazy" width="200" height="433"><img src="img_arnia.jpg" alt="ApiAmo 2" loading="lazy" width="200" height="433"><img src="img_visita.jpg" alt="ApiAmo 3" loading="lazy" width="200" height="433"><img src="img_varroa.jpg" alt="ApiAmo 4" loading="lazy" width="200" height="433"><img src="img_miele.jpg" alt="ApiAmo 5" loading="lazy" width="200" height="433"><img src="img_etichette.jpg" alt="ApiAmo 6" loading="lazy" width="200" height="433"><img src="img_mappa.jpg" alt="ApiAmo 7" loading="lazy" width="200" height="433"><img src="img_magazzino.jpg" alt="ApiAmo 8" loading="lazy" width="200" height="433"></div>
+<h2>Ce que vous pouvez faire avec ApiAmo</h2>
+<div class="funzioni"><div class="carta"><h3>Ruchers et carte</h3><p>Tous vos ruchers sur une carte, chacun avec un visage qui résume sa santé, et une fiche avec codes et documents.</p></div><div class="carta"><h3>Ruches, cadres et hausses</h3><p>Le corps de ruche avec ses cadres (couvain, miel, pollen…) et les hausses avec leur pesée : voyez chaque ruche telle qu&#x27;elle est.</p></div><div class="carta"><h3>Visites en quelques secondes</h3><p>État avec un visage, reine, cellules royales, réserves et caractère de la colonie. Photos, notes écrites ou dictées et notes vocales.</p></div><div class="carta"><h3>Varroa et traitements</h3><p>Comptages de varroa avec graphique et alerte ; traitements avec lot, date d&#x27;expiration et documents du médicament.</p></div><div class="carta"><h3>Reines, nourrissement, essaims</h3><p>Âge et couleur de marquage de la reine, race et éleveur, nourrissement avec les quantités, essaims qui deviennent de nouvelles ruches.</p></div><div class="carta"><h3>Rappels et météo</h3><p>Agenda avec notifications et alertes automatiques ; prévisions de chaque rucher avec les jours propices à la visite.</p></div><div class="carta"><h3>Miel, lots et étiquettes</h3><p>Extractions, lots, ventes par pots et clients. Étiquettes avec QR code prêtes à imprimer.</p></div><div class="carta"><h3>Comptes et stock</h3><p>Dépenses, aides et recettes avec récapitulatif ; stocks minimum et dates d&#x27;expiration des médicaments, du candi et des pots.</p></div><div class="carta"><h3>Vos données restent à vous</h3><p>Ni compte ni publicité : les données restent sur votre appareil, avec sauvegarde complète et verrouillage Face ID.</p></div></div>
+<h2>Comment l&#x27;utiliser</h2>
+<ol class="passi"><li>Téléchargez ApiAmo et touchez « Entrer ».</li><li>Touchez « Ajouter un rucher », ouvrez le rucher et touchez « Ajouter une ruche ».</li><li>Ouvrez la ruche et touchez le corps : vous y trouvez état, cadres, visites, varroa, traitements, reine et rappels.</li><li>Le menu ⋯ en haut à droite contient la carte, miel et lots, dépenses et recettes, graphiques, stock et sauvegarde.</li><li>Juste pour voir ? Ouvrez la « Démo guidée » depuis le menu ⋯ : elle montre tout avec des données d&#x27;exemple.</li></ol>
+<div class="due">
+<div><h2>Prix</h2><p>ApiAmo se télécharge gratuitement et peut être essayée avec 1 rucher et 3 ruches, avec toutes les fonctions. Un achat unique, sans abonnement, supprime toutes les limites pour toujours.</p></div>
+<div><h2>Pour iPhone et iPad</h2><p>Fonctionne à partir d&#x27;iOS 17, sur iPhone et iPad (sur iPad, textes et boutons sont plus grands, pratiques même avec des gants). Disponible en italien, anglais, français, espagnol, allemand, roumain et grec.</p></div>
+</div>
+<div class="ipad"><img src="img_ipad-arnia.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"><img src="img_ipad-mappa.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"></div>
 <div class="fai"><a href="privacy.html?lang=fr">Politique de confidentialité</a><a href="assistenza.html?lang=fr">Assistance</a></div>
 </section>
 <section class="sezione-lingua" data-lingua="es" lang="es">
-<h1>ApiAmo — De la colmena al tarro</h1>
-<p>El cuaderno digital del apicultor: apiarios, colmenas, visitas, varroa, miel, cuentas, almacén y etiquetas QR. Tus datos permanecen en tu dispositivo.</p>
+<div class="eroe">
+<div>
+<h1>ApiAmo</h1>
+<p class="slogan">De la colmena al tarro</p>
+<p class="intro">El cuaderno digital del apicultor. Sigue cada colmena, registra las visitas en pocos segundos incluso con guantes, vigila la varroa y los tratamientos, y lleva tu miel hasta la etiqueta. Todo en tu iPhone y iPad, sin cuenta y sin suscripción.</p>
+<div class="scarica">
+<a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/es-es?size=250x83" alt="Descargar en el App Store" width="168" height="56"></a>
+<span class="etichetta presto">Próximamente en el App Store</span>
+<span class="etichetta android">Versión Android próximamente</span>
+</div>
+<p class="prezzo-breve">Descarga gratuita · prueba con 1 colmenar y 3 colmenas · desbloqueo completo con una sola compra</p>
+</div>
+<div class="vetrina-eroe"><img src="img_arnia.jpg" alt="ApiAmo" width="300" height="650"><div class="qr"><img src="img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Escanea con tu teléfono para descargar</p></div></div>
+</div>
+<h2>Así es</h2>
+<div class="galleria"><img src="img_copertina.jpg" alt="ApiAmo 1" loading="lazy" width="200" height="433"><img src="img_arnia.jpg" alt="ApiAmo 2" loading="lazy" width="200" height="433"><img src="img_visita.jpg" alt="ApiAmo 3" loading="lazy" width="200" height="433"><img src="img_varroa.jpg" alt="ApiAmo 4" loading="lazy" width="200" height="433"><img src="img_miele.jpg" alt="ApiAmo 5" loading="lazy" width="200" height="433"><img src="img_etichette.jpg" alt="ApiAmo 6" loading="lazy" width="200" height="433"><img src="img_mappa.jpg" alt="ApiAmo 7" loading="lazy" width="200" height="433"><img src="img_magazzino.jpg" alt="ApiAmo 8" loading="lazy" width="200" height="433"></div>
+<h2>Qué puedes hacer con ApiAmo</h2>
+<div class="funzioni"><div class="carta"><h3>Colmenares y mapa</h3><p>Todos tus colmenares en un mapa, cada uno con una carita que resume su salud, y una ficha con códigos y documentos.</p></div><div class="carta"><h3>Colmenas, cuadros y alzas</h3><p>La cámara de cría con sus cuadros (cría, miel, polen…) y las alzas con su pesaje: ve cada colmena tal como es.</p></div><div class="carta"><h3>Visitas en segundos</h3><p>Estado con una carita, reina, celdas reales, reservas y carácter de la familia. Fotos, notas escritas o dictadas y notas de voz.</p></div><div class="carta"><h3>Varroa y tratamientos</h3><p>Conteos de varroa con gráfico y aviso; tratamientos con lote, caducidad y documentos del medicamento.</p></div><div class="carta"><h3>Reinas, alimentación, enjambres</h3><p>Edad y color de marcado de la reina, raza y criador, alimentación con cantidades, enjambres que se convierten en nuevas colmenas.</p></div><div class="carta"><h3>Recordatorios y tiempo</h3><p>Agenda con notificaciones y avisos automáticos; previsión de cada colmenar con los días adecuados para la visita.</p></div><div class="carta"><h3>Miel, lotes y etiquetas</h3><p>Cosechas, lotes, ventas por tarros y clientes. Etiquetas con código QR listas para imprimir.</p></div><div class="carta"><h3>Cuentas y almacén</h3><p>Gastos, ayudas e ingresos con resumen; existencias mínimas y caducidades de medicamentos, candi y tarros.</p></div><div class="carta"><h3>Tus datos son tuyos</h3><p>Sin cuenta y sin publicidad: los datos se quedan en tu dispositivo, con copia completa y bloqueo con Face ID.</p></div></div>
+<h2>Cómo se usa</h2>
+<ol class="passi"><li>Descarga ApiAmo y toca «Entrar».</li><li>Toca «Añadir colmenar», abre el colmenar y toca «Añadir colmena».</li><li>Abre la colmena y toca la cámara de cría: encontrarás estado, cuadros, visitas, varroa, tratamientos, reina y recordatorios.</li><li>El menú ⋯ arriba a la derecha contiene el mapa, miel y lotes, gastos e ingresos, gráficos, almacén y copias de seguridad.</li><li>¿Solo quieres echar un vistazo? Abre la «Demo guiada» desde el menú ⋯: lo muestra todo con datos de ejemplo.</li></ol>
+<div class="due">
+<div><h2>Precio</h2><p>ApiAmo se descarga gratis y se puede probar con 1 colmenar y 3 colmenas, con todas las funciones. Con una sola compra, sin suscripción, quitas todos los límites para siempre.</p></div>
+<div><h2>Para iPhone y iPad</h2><p>Funciona desde iOS 17, en iPhone y iPad (en iPad textos y botones son más grandes, cómodos incluso con guantes). Disponible en italiano, inglés, francés, español, alemán, rumano y griego.</p></div>
+</div>
+<div class="ipad"><img src="img_ipad-arnia.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"><img src="img_ipad-mappa.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"></div>
 <div class="fai"><a href="privacy.html?lang=es">Política de privacidad</a><a href="assistenza.html?lang=es">Asistencia</a></div>
 </section>
 <section class="sezione-lingua" data-lingua="de" lang="de">
-<h1>ApiAmo — Von der Beute ins Glas</h1>
-<p>Das digitale Notizbuch des Imkers: Bienenstände, Beuten, Besuche, Varroa, Honig, Finanzen, Lager und QR-Etiketten. Deine Daten bleiben auf deinem Gerät.</p>
+<div class="eroe">
+<div>
+<h1>ApiAmo</h1>
+<p class="slogan">Von der Beute ins Glas</p>
+<p class="intro">Das digitale Notizbuch des Imkers. Behalte jede Beute im Blick, erfasse Durchsichten in Sekunden auch mit Handschuhen, beobachte Varroa und Behandlungen und bring deinen Honig bis aufs Etikett. Alles auf iPhone und iPad, ohne Konto und ohne Abo.</p>
+<div class="scarica">
+<a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/de-de?size=250x83" alt="Laden im App Store" width="168" height="56"></a>
+<span class="etichetta presto">Bald im App Store</span>
+<span class="etichetta android">Android-Version folgt</span>
+</div>
+<p class="prezzo-breve">Kostenlos laden · Test mit 1 Bienenstand und 3 Beuten · volle Freischaltung mit einem einmaligen Kauf</p>
+</div>
+<div class="vetrina-eroe"><img src="img_arnia.jpg" alt="ApiAmo" width="300" height="650"><div class="qr"><img src="img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Mit dem Handy scannen und laden</p></div></div>
+</div>
+<h2>So sieht es aus</h2>
+<div class="galleria"><img src="img_copertina.jpg" alt="ApiAmo 1" loading="lazy" width="200" height="433"><img src="img_arnia.jpg" alt="ApiAmo 2" loading="lazy" width="200" height="433"><img src="img_visita.jpg" alt="ApiAmo 3" loading="lazy" width="200" height="433"><img src="img_varroa.jpg" alt="ApiAmo 4" loading="lazy" width="200" height="433"><img src="img_miele.jpg" alt="ApiAmo 5" loading="lazy" width="200" height="433"><img src="img_etichette.jpg" alt="ApiAmo 6" loading="lazy" width="200" height="433"><img src="img_mappa.jpg" alt="ApiAmo 7" loading="lazy" width="200" height="433"><img src="img_magazzino.jpg" alt="ApiAmo 8" loading="lazy" width="200" height="433"></div>
+<h2>Was du mit ApiAmo machen kannst</h2>
+<div class="funzioni"><div class="carta"><h3>Bienenstände und Karte</h3><p>Alle Bienenstände auf einer Karte, jeder mit einem Gesicht für seinen Zustand, dazu ein Datenblatt mit Nummern und Dokumenten.</p></div><div class="carta"><h3>Beuten, Rähmchen und Honigräume</h3><p>Der Brutraum mit seinen Rähmchen (Brut, Honig, Pollen…) und die Honigräume mit Wägung: jede Beute, wie sie wirklich ist.</p></div><div class="carta"><h3>Durchsicht in Sekunden</h3><p>Zustand mit einem Gesicht, Königin, Weiselzellen, Vorräte und Sanftmut. Fotos, geschriebene oder diktierte Notizen und Sprachnotizen.</p></div><div class="carta"><h3>Varroa und Behandlungen</h3><p>Varroa-Zählungen mit Diagramm und Warnung; Behandlungen mit Charge, Ablaufdatum und Unterlagen des Mittels.</p></div><div class="carta"><h3>Königinnen, Fütterung, Schwärme</h3><p>Alter und Zeichenfarbe der Königin, Rasse und Züchter, Fütterung mit Mengen, Schwärme, die zu neuen Beuten werden.</p></div><div class="carta"><h3>Erinnerungen und Wetter</h3><p>Kalender mit Mitteilungen und automatischen Hinweisen; Vorhersage für jeden Stand mit den besten Tagen für eine Durchsicht.</p></div><div class="carta"><h3>Honig, Chargen und Etiketten</h3><p>Ernten, Chargen, Verkäufe nach Gläsern und Kunden. Etiketten mit QR-Code, druckfertig.</p></div><div class="carta"><h3>Finanzen und Lager</h3><p>Ausgaben, Zuschüsse und Einnahmen mit Übersicht; Mindestbestände und Ablaufdaten für Mittel, Futterteig und Gläser.</p></div><div class="carta"><h3>Deine Daten bleiben deine</h3><p>Kein Konto, keine Werbung: die Daten bleiben auf deinem Gerät, mit vollständigem Backup und Face-ID-Sperre.</p></div></div>
+<h2>So funktioniert es</h2>
+<ol class="passi"><li>Lade ApiAmo und tippe auf „Eintreten“.</li><li>Tippe auf „Bienenstand hinzufügen“, öffne den Stand und tippe auf „Beute hinzufügen“.</li><li>Öffne die Beute und tippe auf den Brutraum: dort findest du Zustand, Rähmchen, Durchsichten, Varroa, Behandlungen, Königin und Erinnerungen.</li><li>Im Menü ⋯ oben rechts findest du Karte, Honig und Chargen, Ausgaben und Einnahmen, Diagramme, Lager und Backup.</li><li>Nur mal schauen? Öffne die „Geführte Demo“ im Menü ⋯: sie zeigt alles mit Beispieldaten.</li></ol>
+<div class="due">
+<div><h2>Preis</h2><p>ApiAmo ist kostenlos und lässt sich mit 1 Bienenstand und 3 Beuten mit allen Funktionen testen. Ein einmaliger Kauf, ohne Abo, hebt alle Grenzen für immer auf.</p></div>
+<div><h2>Für iPhone und iPad</h2><p>Läuft ab iOS 17 auf iPhone und iPad (auf dem iPad sind Texte und Tasten größer, bequem auch mit Handschuhen). Verfügbar auf Italienisch, Englisch, Französisch, Spanisch, Deutsch, Rumänisch und Griechisch.</p></div>
+</div>
+<div class="ipad"><img src="img_ipad-arnia.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"><img src="img_ipad-mappa.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"></div>
 <div class="fai"><a href="privacy.html?lang=de">Datenschutzerklärung</a><a href="assistenza.html?lang=de">Support</a></div>
 </section>
 <section class="sezione-lingua" data-lingua="ro" lang="ro">
-<h1>ApiAmo — De la stup la borcan</h1>
-<p>Caietul digital al apicultorului: stupine, stupi, vizite, varroa, miere, conturi, depozit și etichete QR. Datele tale rămân pe dispozitivul tău.</p>
+<div class="eroe">
+<div>
+<h1>ApiAmo</h1>
+<p class="slogan">De la stup la borcan</p>
+<p class="intro">Caietul digital al apicultorului. Urmărește fiecare stup, înregistrează vizitele în câteva secunde chiar și cu mănuși, ține sub ochi varroa și tratamentele și du-ți mierea până la etichetă. Totul pe iPhone și iPad, fără cont și fără abonament.</p>
+<div class="scarica">
+<a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/ro-ro?size=250x83" alt="Descarcă din App Store" width="168" height="56"></a>
+<span class="etichetta presto">În curând în App Store</span>
+<span class="etichetta android">Versiunea Android în curând</span>
+</div>
+<p class="prezzo-breve">Descărcare gratuită · probă cu 1 stupină și 3 stupi · deblocare completă cu o singură achiziție</p>
+</div>
+<div class="vetrina-eroe"><img src="img_arnia.jpg" alt="ApiAmo" width="300" height="650"><div class="qr"><img src="img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Scanează cu telefonul pentru a descărca</p></div></div>
+</div>
+<h2>Cum arată</h2>
+<div class="galleria"><img src="img_copertina.jpg" alt="ApiAmo 1" loading="lazy" width="200" height="433"><img src="img_arnia.jpg" alt="ApiAmo 2" loading="lazy" width="200" height="433"><img src="img_visita.jpg" alt="ApiAmo 3" loading="lazy" width="200" height="433"><img src="img_varroa.jpg" alt="ApiAmo 4" loading="lazy" width="200" height="433"><img src="img_miele.jpg" alt="ApiAmo 5" loading="lazy" width="200" height="433"><img src="img_etichette.jpg" alt="ApiAmo 6" loading="lazy" width="200" height="433"><img src="img_mappa.jpg" alt="ApiAmo 7" loading="lazy" width="200" height="433"><img src="img_magazzino.jpg" alt="ApiAmo 8" loading="lazy" width="200" height="433"></div>
+<h2>Ce poți face cu ApiAmo</h2>
+<div class="funzioni"><div class="carta"><h3>Stupine și hartă</h3><p>Toate stupinele pe o hartă, fiecare cu o față care îi rezumă starea, plus o fișă cu coduri și documente.</p></div><div class="carta"><h3>Stupi, rame și magazii</h3><p>Cuibul cu ramele sale (puiet, miere, polen…) și magaziile cu cântărirea: vezi fiecare stup așa cum este.</p></div><div class="carta"><h3>Vizite în câteva secunde</h3><p>Starea cu o față, regina, botci, rezerve și caracterul familiei. Fotografii, note scrise sau dictate și note vocale.</p></div><div class="carta"><h3>Varroa și tratamente</h3><p>Numărări de varroa cu grafic și avertizare; tratamente cu lot, dată de expirare și documentele medicamentului.</p></div><div class="carta"><h3>Regine, hrănire, roiuri</h3><p>Vârsta și culoarea de marcare a reginei, rasa și crescătorul, hrănirea cu cantități, roiuri care devin stupi noi.</p></div><div class="carta"><h3>Mementouri și vreme</h3><p>Agendă cu notificări și avertizări automate; prognoza fiecărei stupine cu zilele potrivite pentru vizită.</p></div><div class="carta"><h3>Miere, loturi și etichete</h3><p>Extracții, loturi, vânzări pe borcane și clienți. Etichete cu cod QR gata de tipărit.</p></div><div class="carta"><h3>Conturi și depozit</h3><p>Cheltuieli, subvenții și venituri cu rezumat; stocuri minime și date de expirare pentru medicamente, șerbet și borcane.</p></div><div class="carta"><h3>Datele tale rămân ale tale</h3><p>Fără cont și fără reclame: datele rămân pe dispozitivul tău, cu backup complet și blocare cu Face ID.</p></div></div>
+<h2>Cum se folosește</h2>
+<ol class="passi"><li>Descarcă ApiAmo și atinge „Intră”.</li><li>Atinge „Adaugă stupină”, deschide stupina și atinge „Adaugă stup”.</li><li>Deschide stupul și atinge cuibul: găsești starea, ramele, vizitele, varroa, tratamentele, regina și mementourile.</li><li>Meniul ⋯ din dreapta sus conține harta, miere și loturi, cheltuieli și venituri, grafice, depozitul și backupul.</li><li>Vrei doar să arunci o privire? Deschide „Demonstrație ghidată” din meniul ⋯: îți arată totul cu date de exemplu.</li></ol>
+<div class="due">
+<div><h2>Preț</h2><p>ApiAmo se descarcă gratuit și poate fi încercată cu 1 stupină și 3 stupi, cu toate funcțiile. O singură achiziție, fără abonament, elimină toate limitele pentru totdeauna.</p></div>
+<div><h2>Pentru iPhone și iPad</h2><p>Funcționează de la iOS 17, pe iPhone și iPad (pe iPad textele și butoanele sunt mai mari, comode chiar și cu mănuși). Disponibilă în italiană, engleză, franceză, spaniolă, germană, română și greacă.</p></div>
+</div>
+<div class="ipad"><img src="img_ipad-arnia.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"><img src="img_ipad-mappa.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"></div>
 <div class="fai"><a href="privacy.html?lang=ro">Politica de confidențialitate</a><a href="assistenza.html?lang=ro">Asistență</a></div>
 </section>
 <section class="sezione-lingua" data-lingua="el" lang="el">
-<h1>ApiAmo — Από την κυψέλη στο βάζο</h1>
-<p>Το ψηφιακό τετράδιο του μελισσοκόμου: μελισσοκομεία, κυψέλες, επισκέψεις, βαρρόα, μέλι, λογαριασμοί, αποθήκη και ετικέτες QR. Τα δεδομένα σας μένουν στη συσκευή σας.</p>
+<div class="eroe">
+<div>
+<h1>ApiAmo</h1>
+<p class="slogan">Από την κυψέλη στο βάζο</p>
+<p class="intro">Το ψηφιακό τετράδιο του μελισσοκόμου. Παρακολούθησε κάθε κυψέλη, κατάγραψε τις επισκέψεις σε λίγα δευτερόλεπτα ακόμη και με γάντια, πρόσεχε τη βαρρόα και τις θεραπείες και φτάσε το μέλι σου μέχρι την ετικέτα. Όλα στο iPhone και το iPad σου, χωρίς λογαριασμό και χωρίς συνδρομή.</p>
+<div class="scarica">
+<a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://tools.applemarketingtools.com/api/badges/download-on-the-app-store/black/el-gr?size=250x83" alt="Λήψη από το App Store" width="168" height="56"></a>
+<span class="etichetta presto">Σύντομα στο App Store</span>
+<span class="etichetta android">Η έκδοση Android έρχεται σύντομα</span>
+</div>
+<p class="prezzo-breve">Δωρεάν λήψη · δοκιμή με 1 μελισσοκομείο και 3 κυψέλες · πλήρες ξεκλείδωμα με μία αγορά</p>
+</div>
+<div class="vetrina-eroe"><img src="img_arnia.jpg" alt="ApiAmo" width="300" height="650"><div class="qr"><img src="img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Σάρωσε με το τηλέφωνο για λήψη</p></div></div>
+</div>
+<h2>Πώς είναι</h2>
+<div class="galleria"><img src="img_copertina.jpg" alt="ApiAmo 1" loading="lazy" width="200" height="433"><img src="img_arnia.jpg" alt="ApiAmo 2" loading="lazy" width="200" height="433"><img src="img_visita.jpg" alt="ApiAmo 3" loading="lazy" width="200" height="433"><img src="img_varroa.jpg" alt="ApiAmo 4" loading="lazy" width="200" height="433"><img src="img_miele.jpg" alt="ApiAmo 5" loading="lazy" width="200" height="433"><img src="img_etichette.jpg" alt="ApiAmo 6" loading="lazy" width="200" height="433"><img src="img_mappa.jpg" alt="ApiAmo 7" loading="lazy" width="200" height="433"><img src="img_magazzino.jpg" alt="ApiAmo 8" loading="lazy" width="200" height="433"></div>
+<h2>Τι μπορείς να κάνεις με το ApiAmo</h2>
+<div class="funzioni"><div class="carta"><h3>Μελισσοκομεία και χάρτης</h3><p>Όλα τα μελισσοκομεία σου σε έναν χάρτη, το καθένα με ένα προσωπάκι που συνοψίζει την κατάστασή του, και καρτέλα με κωδικούς και έγγραφα.</p></div><div class="carta"><h3>Κυψέλες, πλαίσια και πατώματα</h3><p>Ο γόνος με τα πλαίσιά του (γόνος, μέλι, γύρη…) και τα πατώματα με το ζύγισμα: δες κάθε κυψέλη όπως πραγματικά είναι.</p></div><div class="carta"><h3>Επισκέψεις σε δευτερόλεπτα</h3><p>Κατάσταση με ένα προσωπάκι, βασίλισσα, βασιλικά κελιά, αποθέματα και χαρακτήρας. Φωτογραφίες, γραπτές ή υπαγορευμένες σημειώσεις και φωνητικές σημειώσεις.</p></div><div class="carta"><h3>Βαρρόα και θεραπείες</h3><p>Μετρήσεις βαρρόας με γράφημα και ειδοποίηση· θεραπείες με παρτίδα, ημερομηνία λήξης και έγγραφα του φαρμάκου.</p></div><div class="carta"><h3>Βασίλισσες, τροφοδοσία, σμήνη</h3><p>Ηλικία και χρώμα σήμανσης της βασίλισσας, φυλή και εκτροφέας, τροφοδοσία με ποσότητες, σμήνη που γίνονται νέες κυψέλες.</p></div><div class="carta"><h3>Υπενθυμίσεις και καιρός</h3><p>Ατζέντα με ειδοποιήσεις και αυτόματες επισημάνσεις· πρόγνωση για κάθε μελισσοκομείο με τις κατάλληλες μέρες για επίσκεψη.</p></div><div class="carta"><h3>Μέλι, παρτίδες και ετικέτες</h3><p>Τρύγοι, παρτίδες, πωλήσεις ανά βάζο και πελάτες. Ετικέτες με κωδικό QR έτοιμες για εκτύπωση.</p></div><div class="carta"><h3>Οικονομικά και αποθήκη</h3><p>Έξοδα, επιδοτήσεις και έσοδα με σύνοψη· ελάχιστα αποθέματα και λήξεις φαρμάκων, ζαχαροζύμης και βάζων.</p></div><div class="carta"><h3>Τα δεδομένα σου είναι δικά σου</h3><p>Χωρίς λογαριασμό και χωρίς διαφημίσεις: τα δεδομένα μένουν στη συσκευή σου, με πλήρες αντίγραφο ασφαλείας και κλείδωμα Face ID.</p></div></div>
+<h2>Πώς χρησιμοποιείται</h2>
+<ol class="passi"><li>Κατέβασε το ApiAmo και πάτησε «Είσοδος».</li><li>Πάτησε «Προσθήκη μελισσοκομείου», άνοιξε το μελισσοκομείο και πάτησε «Προσθήκη κυψέλης».</li><li>Άνοιξε την κυψέλη και πάτησε τον γόνο: θα βρεις κατάσταση, πλαίσια, επισκέψεις, βαρρόα, θεραπείες, βασίλισσα και υπενθυμίσεις.</li><li>Το μενού ⋯ πάνω δεξιά περιέχει τον χάρτη, μέλι και παρτίδες, έξοδα και έσοδα, γραφήματα, αποθήκη και αντίγραφα ασφαλείας.</li><li>Θέλεις απλώς να ρίξεις μια ματιά; Άνοιξε το «Καθοδηγούμενο demo» από το μενού ⋯: τα δείχνει όλα με δεδομένα παραδείγματος.</li></ol>
+<div class="due">
+<div><h2>Τιμή</h2><p>Το ApiAmo κατεβαίνει δωρεάν και μπορείς να το δοκιμάσεις με 1 μελισσοκομείο και 3 κυψέλες, με όλες τις λειτουργίες. Με μία μόνο αγορά, χωρίς συνδρομή, αφαιρείς κάθε όριο για πάντα.</p></div>
+<div><h2>Για iPhone και iPad</h2><p>Λειτουργεί από το iOS 17, σε iPhone και iPad (στο iPad κείμενα και κουμπιά είναι μεγαλύτερα, βολικά ακόμη και με γάντια). Διαθέσιμο στα ιταλικά, αγγλικά, γαλλικά, ισπανικά, γερμανικά, ρουμανικά και ελληνικά.</p></div>
+</div>
+<div class="ipad"><img src="img_ipad-arnia.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"><img src="img_ipad-mappa.jpg" alt="ApiAmo iPad" loading="lazy" width="320" height="427"></div>
 <div class="fai"><a href="privacy.html?lang=el">Πολιτική απορρήτου</a><a href="assistenza.html?lang=el">Υποστήριξη</a></div>
 </section>
 </main>
-<footer>© <span class="d-anno"></span> <span class="d-nome">[NOME E COGNOME]</span></footer>
+<footer>© <span class="d-anno"></span> <span class="d-nome">Maurizio Covarelli</span></footer>
 <script>
+// IMPOSTAZIONI: quando l'app è sull'App Store, scrivi true al posto di false
 window.DATI = {
   nome:  "Maurizio Covarelli",
   email: "maurizio.covarelli@icloud.com",
-  data:  "2026-10-01"
+  data:  "2026-10-05",
+  appPubblicata: false
 };
 </script>
 <script>
 (function () {
-  document.documentElement.classList.add("js");
+  var radice = document.documentElement;
+  radice.classList.add("js");
   var D = window.DATI || {};
+  if (D.appPubblicata) { radice.classList.add("pubblicata"); }
   var anno = String(new Date().getFullYear());
-  function riempi(sel, valore, mail) {
-    document.querySelectorAll(sel).forEach(function (el) {
-      if (!valore) return;
-      el.textContent = valore;
-      if (mail) { el.setAttribute("href", "mailto:" + valore); }
-    });
-  }
-  riempi(".d-nome", D.nome); riempi(".d-data", D.data); riempi(".d-email", D.email, true);
   document.querySelectorAll(".d-anno").forEach(function (el) { el.textContent = anno; });
+  if (D.nome) { document.querySelectorAll(".d-nome").forEach(function (el) { el.textContent = D.nome; }); }
 
   var sezioni = Array.prototype.slice.call(document.querySelectorAll(".sezione-lingua"));
   var bottoni = Array.prototype.slice.call(document.querySelectorAll(".lingue button"));
@@ -105,7 +298,7 @@ window.DATI = {
   function scegli(lg) {
     sezioni.forEach(function (s) { s.classList.toggle("attiva", s.getAttribute("data-lingua") === lg); });
     bottoni.forEach(function (b) { b.classList.toggle("attiva", b.getAttribute("data-lingua") === lg); });
-    document.documentElement.setAttribute("lang", lg);
+    radice.setAttribute("lang", lg);
     try { localStorage.setItem("apiamo_lingua", lg); } catch (e) {}
   }
   bottoni.forEach(function (b) { b.addEventListener("click", function () { scegli(b.getAttribute("data-lingua")); }); });
