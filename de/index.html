@@ -49,7 +49,7 @@ a { color:#a35a00; }
 .sezione-lingua { border-top:1px solid var(--riga); margin-top:24px; padding-top:8px; }
 .js .sezione-lingua { display:none; border-top:0; margin-top:0; padding-top:0; }
 .js .sezione-lingua.attiva { display:block; }
-.eroe { display:grid; grid-template-columns:1fr; gap:24px; align-items:center; padding:12px 0 8px; }
+.eroe { display:grid; grid-template-columns:1fr; gap:32px; align-items:center; padding:12px 0 8px; }
 @media (min-width:820px) { .eroe { grid-template-columns:1.25fr 1fr; } }
 .slogan { font-size:22px; font-weight:700; margin:0 0 .4em; }
 .novita-2 { display:inline-block; margin:0 0 .8em; padding:.35em .8em; border-radius:999px; background:#3d2208; color:#ffd84d; font-weight:600; font-size:15px; }
@@ -63,10 +63,10 @@ a { color:#a35a00; }
 .pronto { display:inline-block; }
 .offerta { display:inline-block; margin:.2em 0 0; padding:6px 12px; border-radius:10px; background:var(--giallo); color:#3d1f05; font-size:15px; font-weight:700; }
 .prezzo-breve { color:var(--tenue); font-size:15px; }
-.qr { display:none; text-align:center; background:var(--carta); border:1px solid var(--riga); border-radius:20px; padding:18px; }
-.qr img { width:180px; height:180px; }
-.qr p { font-size:14px; color:var(--tenue); margin:.4em 0 0; }
-@media (min-width:820px) { .qr { display:block; } }
+.qr { display:none; align-items:center; gap:16px; background:var(--carta); border:1px solid var(--riga); border-radius:18px; padding:12px 18px 12px 12px; margin:14px 0 6px; width:fit-content; max-width:100%; }
+.qr img { width:120px; height:120px; flex:0 0 auto; }
+.qr p { font-size:15px; color:var(--tenue); margin:0; max-width:220px; }
+@media (min-width:820px) { .qr { display:flex; } }
 .vetrina-eroe { text-align:center; }
 .vetrina-eroe img { width:min(300px,70%); height:auto; border-radius:28px; box-shadow:0 12px 36px rgba(61,31,5,.18); }
 .galleria { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 2px 14px; -webkit-overflow-scrolling:touch; }
@@ -104,9 +104,10 @@ footer { text-align:center; color:var(--tenue); font-size:14px; padding:24px 16p
 <a class="badge pronto" href="https://apps.apple.com/app/id6818210322"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/de-de?size=250x83" alt="Laden im App Store" width="168" height="56"></a>
 <span class="etichetta android">Android-Version folgt</span>
 </div>
+<div class="qr"><img src="/img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Mit dem Handy scannen und laden</p></div>
 <p class="prezzo-breve">Kostenlos laden · Test mit 1 Bienenstand und 3 Beuten · volle Freischaltung mit einem einmaligen Kauf</p>
 </div>
-<div class="vetrina-eroe"><img src="/img_arnia.jpg" alt="ApiAmo: Beute mit Brutraum und Honigräumen" width="300" height="650"><div class="qr"><img src="/img_qr-app-store.png" alt="QR code App Store" width="180" height="180"><p>Mit dem Handy scannen und laden</p></div></div>
+<div class="vetrina-eroe"><img src="/img_arnia.jpg" alt="ApiAmo: Beute mit Brutraum und Honigräumen" width="300" height="650"></div>
 </div>
 <h2>So sieht es aus</h2>
 <div class="galleria"><img src="/img_copertina.jpg" alt="ApiAmo: Startbildschirm" loading="lazy" width="200" height="433"><img src="/img_arnia.jpg" alt="ApiAmo: Beute mit Brutraum und Honigräumen" loading="lazy" width="200" height="433"><img src="/img_visita.jpg" alt="ApiAmo: Durchsicht der Beute" loading="lazy" width="200" height="433"><img src="/img_varroa.jpg" alt="ApiAmo: Varroa-Zählung" loading="lazy" width="200" height="433"><img src="/img_miele.jpg" alt="ApiAmo: Honig-Übersicht" loading="lazy" width="200" height="433"><img src="/img_etichette.jpg" alt="ApiAmo: Honigetiketten mit QR-Code" loading="lazy" width="200" height="433"><img src="/img_mappa.jpg" alt="ApiAmo: Karte der Bienenstände" loading="lazy" width="200" height="433"><img src="/img_magazzino.jpg" alt="ApiAmo: Lager" loading="lazy" width="200" height="433"></div>
