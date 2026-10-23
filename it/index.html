@@ -84,8 +84,11 @@ ol.passi li::before { content:counter(passo); position:absolute; left:14px; top:
 .mac { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr)); gap:14px; margin-top:14px; }
 .mac img { width:100%; height:auto; border-radius:12px; box-shadow:0 6px 18px rgba(61,31,5,.14); }
 .titolo-mac { margin-top:28px; }
-.duo { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:14px; }
-.duo img { height:auto; width:min(340px,47%); border-radius:16px; box-shadow:0 6px 18px rgba(61,31,5,.14); }
+.duo-riga { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(150px,1fr); gap:12px; overflow-x:auto; margin-top:10px; padding-bottom:6px; scroll-snap-type:x mandatory; }
+.duo-riga.larga { grid-auto-columns:minmax(300px,1fr); }
+.duo-riga img { width:100%; height:auto; border-radius:14px; box-shadow:0 6px 18px rgba(61,31,5,.14); scroll-snap-align:start; }
+.duo-sotto { margin:18px 0 0; font-size:17px; color:#6b4a1c; }
+@media(max-width:600px){.duo-riga{grid-auto-columns:62%}.duo-riga.larga{grid-auto-columns:88%}}
 .ipad img { width:min(320px,46%); height:auto; border-radius:16px; box-shadow:0 6px 18px rgba(61,31,5,.14); }
 .fai { display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 0; }
 .fai a { display:inline-block; background:var(--giallo); color:#3d1f05; font-weight:700; text-decoration:none; padding:12px 20px; border-radius:12px; }
@@ -128,11 +131,17 @@ footer { text-align:center; color:var(--tenue); font-size:14px; padding:24px 16p
 </div>
 <div><h2>Per iPhone, iPad e Mac</h2><p>Funziona da iOS 17, su iPhone e iPad (su iPad testi, tasti e finestre sono più grandi, comodi anche con i guanti), e sul Mac: finestre grandi, menu in alto e scorciatoie da tastiera. Con iCloud ritrovi gli stessi dati su tutti i dispositivi e gli acquisti valgono anche sul Mac. Pronta per iPhone Duo, chiuso o aperto, in verticale e in orizzontale. Disponibile in italiano, inglese, francese, spagnolo, tedesco, rumeno e greco.</p></div>
 </div>
-<div class="ipad"><img src="/img_ipad-arnia.jpg" alt="ApiAmo su iPad: arnia" loading="lazy" width="320" height="427"><img src="/img_ipad-mappa.jpg" alt="ApiAmo su iPad: mappa" loading="lazy" width="320" height="427"></div>
-<h2 class="titolo-mac">Com&#x27;è sul Mac</h2>
-<div class="mac"><img src="/img_mac-arnia.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"><img src="/img_mac-nomadismo.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"><img src="/img_mac-lotto.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"><img src="/img_mac-mappa.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"></div>
 <h2 class="titolo-mac">Sull&#x27;iPhone Duo</h2>
-<div class="duo"><img src="/img_duo-aperto-it.jpg" alt="ApiAmo, iPhone Duo aperto" loading="lazy" width="633" height="900"><img src="/img_duo-chiuso-it.jpg" alt="ApiAmo, iPhone Duo chiuso" loading="lazy" width="619" height="900"></div>
+<h3 class="duo-sotto">Aperto</h3>
+<div class="duo-riga"><img src="/img_duo-1-it.jpg" alt="ApiAmo, iPhone Duo: arnia" loading="lazy" width="633" height="900"><img src="/img_duo-2-it.jpg" alt="ApiAmo, iPhone Duo: dettatura" loading="lazy" width="633" height="900"><img src="/img_duo-3-it.jpg" alt="ApiAmo, iPhone Duo: nomadismo" loading="lazy" width="633" height="900"><img src="/img_duo-4-it.jpg" alt="ApiAmo, iPhone Duo: etichetta" loading="lazy" width="633" height="900"><img src="/img_duo-5-it.jpg" alt="ApiAmo, iPhone Duo: mappa" loading="lazy" width="633" height="900"></div>
+<h3 class="duo-sotto">Aperto, in orizzontale</h3>
+<div class="duo-riga larga"><img src="/img_duo-oriz-1-it.jpg" alt="ApiAmo, iPhone Duo: arnia" loading="lazy" width="900" height="731"><img src="/img_duo-oriz-2-it.jpg" alt="ApiAmo, iPhone Duo: dettatura" loading="lazy" width="900" height="731"><img src="/img_duo-oriz-3-it.jpg" alt="ApiAmo, iPhone Duo: nomadismo" loading="lazy" width="900" height="731"><img src="/img_duo-oriz-4-it.jpg" alt="ApiAmo, iPhone Duo: etichetta" loading="lazy" width="900" height="731"><img src="/img_duo-oriz-5-it.jpg" alt="ApiAmo, iPhone Duo: mappa" loading="lazy" width="900" height="731"></div>
+<h3 class="duo-sotto">Chiuso</h3>
+<div class="duo-riga"><img src="/img_duo-chiuso-1-it.jpg" alt="ApiAmo, iPhone Duo: arnia" loading="lazy" width="619" height="900"><img src="/img_duo-chiuso-2-it.jpg" alt="ApiAmo, iPhone Duo: dettatura" loading="lazy" width="619" height="900"><img src="/img_duo-chiuso-3-it.jpg" alt="ApiAmo, iPhone Duo: nomadismo" loading="lazy" width="619" height="900"><img src="/img_duo-chiuso-4-it.jpg" alt="ApiAmo, iPhone Duo: etichetta" loading="lazy" width="619" height="900"><img src="/img_duo-chiuso-5-it.jpg" alt="ApiAmo, iPhone Duo: mappa" loading="lazy" width="619" height="900"></div>
+<h2 class="titolo-mac">Sull&#x27;iPad</h2>
+<div class="ipad"><img src="/img_ipad-arnia.jpg" alt="ApiAmo su iPad: arnia" loading="lazy" width="320" height="427"><img src="/img_ipad-mappa.jpg" alt="ApiAmo su iPad: mappa" loading="lazy" width="320" height="427"></div>
+<h2 class="titolo-mac">Sul Mac</h2>
+<div class="mac"><img src="/img_mac-arnia.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"><img src="/img_mac-nomadismo.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"><img src="/img_mac-lotto.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"><img src="/img_mac-mappa.jpg" alt="ApiAmo sul Mac" loading="lazy" width="600" height="375"></div>
 <div class="fai"><a href="/privacy.html?lang=it">Informativa sulla privacy</a><a href="/assistenza.html?lang=it">Assistenza</a></div>
 </section>
 </main>
